@@ -258,18 +258,20 @@ export default function ContactForm() {
 			</label>
 			{error("consent")}
 			<button
-				className="button button-blue form-submit w-full mt-6 min-h-[52px] text-sm font-extrabold rounded-2xl flex items-center justify-between cursor-pointer disabled:cursor-wait disabled:opacity-65"
+				className="button button-blue form-submit w-full mt-6 min-h-[52px] px-6 py-3.5 text-sm font-bold text-white bg-blue-600 border-2 border-blue-500 rounded-2xl shadow-[0_4px_0_#1d4ed8,0_6px_18px_rgba(37,99,235,0.35)] hover:bg-blue-500 hover:border-blue-400 active:translate-y-[3px] active:shadow-[0_1px_0_#1d4ed8] transition-all flex items-center justify-between select-none cursor-pointer disabled:cursor-wait disabled:opacity-65 disabled:hover:bg-blue-600 disabled:hover:border-blue-500 disabled:active:translate-y-0 disabled:active:shadow-[0_4px_0_#1d4ed8]"
 				type="submit"
 				disabled={status === "submitting"}
 			>
-				{status === "submitting" ? "Mengirim pesan…" : "Kirim cerita proyekmu"}
+				<span>
+					{status === "submitting" ? "Mengirim pesan…" : "Kirim cerita proyekmu"}
+				</span>
 				<svg
 					width="20"
 					height="20"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
-					strokeWidth="1.5"
+					strokeWidth="2"
 					aria-hidden="true"
 				>
 					<path d="M7 17 17 7M7 7h10v10" />
