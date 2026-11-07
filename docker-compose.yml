@@ -1,0 +1,17 @@
+services:
+  tiga-searah:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUN_VERSION: 1.4.3
+        SITE_URL: ${SITE_URL:-https://tigasearah.my.id}
+    image: tiga-searah:latest
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      CONTACT_ALLOWED_ORIGIN: ${CONTACT_ALLOWED_ORIGIN:-https://tigasearah.my.id}     # comma-separated
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-}
+      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL:-trio.searah@gmail.com}
